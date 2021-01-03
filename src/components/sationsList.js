@@ -24,44 +24,44 @@ const slotListPow =(list) => list.map((item) =>
 );
 
 export default function StationTable(props) {
-    const stations = props.stations;
-    const stationList = (stations) => {
-        if(stations.length < 10) {
-            let stId = "001";
-            return (
-            <tr style={{borderBottom: "1px solid black"}} >
-                <td> {stId} </td>
+    let stations = [];
+    let station = { id: '0001', slots: props.stations, loc: 'London' }
+    stations.push(station);
+    const stationList = stations.map((st) =>
+             <tr style={{borderBottom: "1px solid black"}} >
+                <td> {st.id} </td>
                 <td>
-                    {slotListID(stations)}
+                    {slotListID(st.slots)}
                 </td>
                 <td>
-                    {slotListStatus(stations)}
+                    {slotListStatus(st.slots)}
                 </td>
                 <td>
-                    {slotListInfo(stations)}
+                    {slotListInfo(st.slots)}
                 </td>
                 <td>
-                    {slotListPow(stations)}
+                    {slotListPow(st.slots)}
                 </td>
-                <td>LONDON</td>
+                <td>{st.loc}</td>
             </tr>
-        )}
-    };
+        );
 
     return(
-        <table>
-            <tbody>
-            <tr style={{borderBottom: "1px solid black"}}>
-                <td>id&emsp;&emsp;&emsp;</td>
-                <td>Pad ID&emsp;&emsp;</td>
-                <td>Status&emsp;&emsp;</td>
-                <td>Info&emsp;&emsp;</td>
-                <td>Charge level&emsp;&emsp;</td>
-                <td>Location&emsp;&emsp;</td>
-            </tr>
+        <div>
+            <table>
+                <tbody>
+                <tr style={{borderBottom: "1px solid black"}}>
+                    <td>id&emsp;&emsp;&emsp;</td>
+                    <td>Pad ID&emsp;&emsp;</td>
+                    <td>Status&emsp;&emsp;</td>
+                    <td>Info&emsp;&emsp;</td>
+                    <td>Charge level&emsp;&emsp;</td>
+                    <td>Location&emsp;&emsp;</td>
+                </tr>
 
-        {stationList(stations)}
-            </tbody>
-        </table>
+            {stationList}
+                </tbody>
+            </table>
+        </div>
     )
 }

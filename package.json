@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/data-grid": "^4.0.0-alpha.14"
+    "@material-ui/data-grid": "^4.0.0-alpha.14",
+    "react-router-dom": "^5.2.0"
   }
 }
