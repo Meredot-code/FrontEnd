@@ -1,12 +1,12 @@
-export const AUTH_CHANGE_EMAIL = 'AUTH_CHANGE_EMAIL';
-export const AUTH_CHANGE_PASSWORD = 'AUTH_CHANGE_PASSWORD';
+export const STATION_FETCH_DATA = 'STATION_FETCH_DATA';
+export const SET_FILTERED_STATION = 'SET_FILTERED_STATION';
 
-export const setEmailText = email => ({
-    type: AUTH_CHANGE_EMAIL,
-    payload: email
+export const setStation = stations => ({
+    type: STATION_FETCH_DATA,
+    payload: stations
 });
 
-export const setPasswordText = password => ({
-    type: AUTH_CHANGE_PASSWORD,
-    payload: password
+export const setFilteredStations = filteredstations => ({
+    type: SET_FILTERED_STATION,
+    payload: filteredstations
 });

@@ -1,23 +1,24 @@
-import {AUTH_CHANGE_EMAIL, AUTH_CHANGE_PASSWORD} from "./actions";
+import {STATION_FETCH_DATA, SET_FILTERED_STATION} from "./actions";
 
 const defaultState = {
-    email: '',
-    password: ''
+    station: [
+        {id: 1, pow: 127, location: 'loc1' },
+        {id: 2, pow: 100, location: 'loc2' }
+    ],
+    filteredstation: []
 };
 
-export const authReducer = (state = defaultState, action) => {
-    console.log(state);
+export const stationReducer = (state = defaultState, action) => {
     switch(action.type) {
-        case AUTH_CHANGE_EMAIL:
+        case STATION_FETCH_DATA:
             return {
                 ...state,
-                email: action.payload
+                station: action.payload
             };
-
-        case AUTH_CHANGE_PASSWORD:
+        case  SET_FILTERED_STATION:
             return {
                 ...state,
-                password: action.payload
+                filteredstation: action.payload
             }
     }
 
