@@ -1,4 +1,5 @@
 import React from 'react';
+import lodashClonedeep from 'lodash.clonedeep';
 import StationTable from './sationsList';
 
 export default class Stations extends React.Component {
@@ -25,14 +26,15 @@ export default class Stations extends React.Component {
         this.props.setFilteredStations(station);
     };
 
-    countParameterStation() {
+    countParameterStation(data) {
+        let newData = JSON.parse(JSON.stringify(data));
         this.stationQty = 0;
         this.slotQty = 0;
         this.availableQty = 0;
         this.occupiedQty = 0;
         this.outOfWork = 0;
 
-        this.props.station.forEach((item, i) => {
+        newData.forEach((item) => {
             this.stationQty++;
             if(item.arr_slots.length > 0) this.slotQty += item.arr_slots.length
             item.arr_slots.forEach(slot => {
@@ -53,12 +55,12 @@ export default class Stations extends React.Component {
             })
             .then((data) => {
                 if(data.length > 0) {
-                    this.setStation(data)
-                    this.filterUploadData(data)
+                    this.setStation(lodashClonedeep(data))
+                    this.filterUploadData(lodashClonedeep(data))
+                    this.countParameterStation(data)
                 }
-                this.countParameterStation()
             })
-            .then( setTimeout(this.onGetStation, 100))
+            .then( setTimeout(this.onGetStation, 1000))
     }
 
     componentDidMount() {
