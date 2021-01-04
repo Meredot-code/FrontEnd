@@ -8,13 +8,13 @@ const slotListID = (list) => list.map((item) =>
 
 const slotListStatus =(list) => list.map((item) =>
     <tr key={item.slot_id}>
-        <td>{item.slot_status}&emsp;</td>
+        <td>{item.slot_status === 0 ? "OC":"AVA"}&emsp;</td>
     </tr>
 );
 
 const slotListInfo =(list) => list.map((item) =>
     <tr key={item.slot_id}>
-        <td>{item.slot_status === 0 ? "OC":"AVA"}&emsp;</td>
+        <td>{item.slot_status > 4 ? "Online":"Offline"}&emsp;</td>
     </tr>
 );
 const slotListPow =(list) => list.map((item) =>
@@ -25,7 +25,7 @@ const slotListPow =(list) => list.map((item) =>
 
 export default function StationTable(props) {
     let stations = [];
-    let station = { id: '0001', slots: props.stations, loc: 'London' }
+    let station = { id: '0001', slots: props.stations, loc: 'London' };
     stations.push(station);
     const stationList = stations.map((st) =>
              <tr style={{borderBottom: "1px solid black"}} >

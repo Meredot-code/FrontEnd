@@ -6,6 +6,12 @@ export default class Stations extends React.Component {
         super(props);
 
         this.condition = null;
+        this.stationQty = 0;
+        this.slotQty = 0;
+        this.availableQty = 0;
+        this.deniedQty = 0;
+        this.chargingQty = 0;
+        this.notChargingQty = 0;
 
         this.setStation = this.setStation.bind(this);
         this.onGetStation = this.onGetStation.bind(this);
@@ -13,6 +19,20 @@ export default class Stations extends React.Component {
     };
 
     setStation(station) {
+
+        this.stationQty = 0;
+        this.slotQty = 0;
+        this.occupiedQty = 0;
+        this.deniedQty = 0;
+        this.chargingQty = 0;
+        this.notChargingQty = 0;
+        this.props.station.forEach((item, i) => {
+            this.slotQty++;
+            if(item.slot_status === 0) this.occupiedQty++;
+            if(item.slot_status === 1) this.availableQty++;
+        });
+
+
         this.props.setStation(station);
     };
 
@@ -41,17 +61,17 @@ export default class Stations extends React.Component {
 
     filterUploadData(data) {
         let filteredData = data;
-        if (this.condition === 'f2') {
+        if (this.condition === 'Occupied') {
             filteredData = this.props.station.filter((item) => {
                 if(item.slot_status === 0) return item;
             });
         }
-        if (this.condition === 'f3') {
+        if (this.condition === 'Available') {
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status === 1) return item;
+                if(item.slot_status > 0) return item;
             });
         }
-        if (this.condition === 'f4') {
+        if (this.condition === 'Offline') {
             filteredData = this.props.station.filter((item) => {
                 if(item.slot_status === 1) return item;
             });
@@ -63,25 +83,25 @@ export default class Stations extends React.Component {
 
         let filteredData = this.props.station;
         let value = event.target.value;
-        if (event.target.value === 'All') this.condition = null;
-        if (value === 'f2') {
-            this.condition = 'f2';
+        if (value === 'All') this.condition = null;
+        if (value === 'Occupied') {
+            this.condition = 'Occupied';
             filteredData = this.props.station.filter((item) => {
                 if(item.slot_status === 0)
                     return item;
             });
         }
-        if (value === 'f3') {
-            this.condition = 'f3';
+        if (value === 'Available') {
+            this.condition = 'Available';
             filteredData = this.props.station.filter((item) => {
                 if(item.slot_status === 1)
                     return item;
             });
         }
-        if (value === 'f4') {
-            this.condition = 'f4';
+        if (value === 'Offline') {
+            this.condition = 'Offline';
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status === 3)
+                if(item.slot_status > 4)
                     return item;
             });
         }
@@ -94,11 +114,17 @@ export default class Stations extends React.Component {
             <div>
                 <h3>Station Page</h3>
                 <div>
-                    {/*<button onClick={this.onGetStation}>GET DATA</button>*/}
                     <input value="All" onClick={this.filterInstantUpdate } type="button"/>
-                    <input value="f2" onClick={this.filterInstantUpdate } type="button"/>
-                    <input value="f3" onClick={this.filterInstantUpdate } type="button"/>
-                    <input value="f4" onClick={this.filterInstantUpdate } type="button"/>
+                    <input value="Occupied" onClick={this.filterInstantUpdate } type="button"/>
+                    <input value="Available" onClick={this.filterInstantUpdate } type="button"/>
+                    <input value="Offline" onClick={this.filterInstantUpdate } type="button"/>
+
+                    <p>Station qty:  { this.stationQty }&emsp;
+                        Pad qty:  { this.slotQty }&emsp;
+                        Occupied pads:  { this.occupiedQty }&emsp;
+                        Available pads:  { this.availableQty }
+                    </p>
+
 
                     <StationTable stations={this.props.filteredstation} />
                 </div>

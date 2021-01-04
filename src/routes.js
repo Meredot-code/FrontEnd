@@ -3,6 +3,8 @@ import {Switch, Route, Redirect, BrowserRouter} from 'react-router-dom';
 import AuthContainer  from './components/AuthContainer';
 import StationsConteiner from './components/StationsConteiner';
 import Registration from "./components/Registration";
+import Home from "./components/Home";
+import Scooter from "./components/ScooterConteiner";
 
 export const  useRoutes = (isAuthenticated) => {
     if(isAuthenticated) {
@@ -10,15 +12,18 @@ export const  useRoutes = (isAuthenticated) => {
             <BrowserRouter>
                 <Switch>
                     <Route path="/home" exec>
+                        <Home/>
+                    </Route>
+                    <Route path="/auth" exec>
                         <AuthContainer/>
                     </Route>
-                    <Route path="/station" exec>
+                    <Route path="/st" exec>
                         <StationsConteiner/>
                     </Route>
-                    <Route path="/scooter" exec>
-                        <Registration/>
+                    <Route path="/sc" exec>
+                        <Scooter/>
                     </Route>
-                    {/*<Redirect to="/"/>*/}
+                    <Redirect to="/home"/>
                 </Switch>
             </BrowserRouter>
         )
@@ -26,16 +31,16 @@ export const  useRoutes = (isAuthenticated) => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exec>
+                <Route path="/home" exec>
                     <AuthContainer/>
                 </Route>
-                <Route path="/news" exec>
+                <Route path="/st" exec>
                     <AuthContainer/>
                 </Route>
-                <Route path="/count" exec>
+                <Route path="/sc" exec>
                     <AuthContainer/>
                 </Route>
-                <Redirect to="/"/>
+                <Redirect to="/home"/>
             </Switch>
         </BrowserRouter>
     )
