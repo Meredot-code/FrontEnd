@@ -163,7 +163,6 @@ export default class Stations extends React.Component {
                         Out of work:   { this.outOfWork }
                     </p>
 
-
                     <StationTable stations={this.props.filteredstation} />
                 </div>
             </div>
