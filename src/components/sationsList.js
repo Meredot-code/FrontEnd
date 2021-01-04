@@ -1,9 +1,13 @@
 import React from "react";
 
-const slotListID = (list) => list.map((item) =>
-    <tr key={item.slot_id}>
-        <td>{item.slot_id}&emsp;</td>
-    </tr>
+const slotListID = (list) => list.map((item) => {
+    if(true){
+        return(
+            <tr key={item.slot_id}>
+                <td>{item.slot_id}&emsp;</td>
+            </tr>
+        )}
+    }
 );
 
 const slotListStatus =(list) => list.map((item) =>

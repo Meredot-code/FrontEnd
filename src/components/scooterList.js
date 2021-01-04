@@ -1,9 +1,6 @@
 import React from "react";
 
 export default function ScooterTable(props) {
-
-    console.log("props -" + props.scooter);
-
     const scooterList = props.scooter.map((item) =>
         <tr key={item.sc_id}>
             <td>{item.sc_id}&emsp;</td>
@@ -13,7 +10,6 @@ export default function ScooterTable(props) {
             <td>{item.sc_perm === 0 ? 'Denied' : 'Granted'}&emsp;</td>
             <td>{item.sc_location}&emsp;</td>
         </tr>
-
     );
 
     return(

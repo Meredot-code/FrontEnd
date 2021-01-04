@@ -52,11 +52,13 @@ export default class Stations extends React.Component {
                 return response.json();
             })
             .then((data) => {
-                // this.filterUploadData(data)
-                if(data.length > 0) this.setStation(data)
+                if(data.length > 0) {
+                    this.setStation(data)
+                    this.filterUploadData(data)
+                }
                 this.countParameterStation()
             })
-            .then( setTimeout(this.onGetStation, 2000))
+            .then( setTimeout(this.onGetStation, 100))
     }
 
     componentDidMount() {
@@ -65,19 +67,35 @@ export default class Stations extends React.Component {
 
     filterUploadData(data) {
         let filteredData = data;
+        let filteredSlot = [];
         if (this.condition === 'Occupied') {
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status === 1) return item;
+                filteredSlot = item.arr_slots.filter(slot => {
+                    if(slot.slot_status === 1)
+                        return slot;
+                })
+                item.arr_slots = filteredSlot;
+                return item;
             });
         }
         if (this.condition === 'Available') {
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status === 0) return item;
+                filteredSlot = item.arr_slots.filter(slot => {
+                    if(slot.slot_status === 0)
+                        return slot;
+                })
+                item.arr_slots = filteredSlot;
+                return item;
             });
         }
         if (this.condition === 'Offline') {
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status > 3) return item;
+                filteredSlot = item.arr_slots.filter(slot => {
+                    if(slot.slot_status > 3)
+                        return slot;
+                })
+                item.arr_slots = filteredSlot;
+                return item;
             });
         }
         this.setFilteredStation(filteredData)
@@ -86,27 +104,40 @@ export default class Stations extends React.Component {
     filterInstantUpdate(event) {
 
         let filteredData = this.props.station;
+        let filteredSlot = [];
         let value = event.target.value;
         if (value === 'All') this.condition = null;
         if (value === 'Occupied') {
             this.condition = 'Occupied';
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status === 1)
-                    return item;
+                filteredSlot = item.arr_slots.filter(slot => {
+                    if(slot.slot_status === 1)
+                        return slot;
+                    })
+                item.arr_slots = filteredSlot;
+                return item;
             });
         }
         if (value === 'Available') {
             this.condition = 'Available';
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status === 0)
-                    return item;
+                filteredSlot = item.arr_slots.filter(slot => {
+                    if(slot.slot_status === 0)
+                        return slot;
+                })
+                item.arr_slots = filteredSlot;
+                return item;
             });
         }
         if (value === 'Offline') {
             this.condition = 'Offline';
             filteredData = this.props.station.filter((item) => {
-                if(item.slot_status > 3)
-                    return item;
+                filteredSlot = item.arr_slots.filter(slot => {
+                    if(slot.slot_status > 3)
+                        return slot;
+                })
+                item.arr_slots = filteredSlot;
+                return item;
             });
         }
 
@@ -118,10 +149,10 @@ export default class Stations extends React.Component {
             <div>
                 <h3>Station Page</h3>
                 <div>
-                    {/*<input value="All" onClick={this.filterInstantUpdate } type="button"/>*/}
-                    {/*<input value="Occupied" onClick={this.filterInstantUpdate } type="button"/>*/}
-                    {/*<input value="Available" onClick={this.filterInstantUpdate } type="button"/>*/}
-                    {/*<input value="Offline" onClick={this.filterInstantUpdate } type="button"/>*/}
+                    <input value="All" onClick={this.filterInstantUpdate } type="button"/>
+                    <input value="Occupied" onClick={this.filterInstantUpdate } type="button"/>
+                    <input value="Available" onClick={this.filterInstantUpdate } type="button"/>
+                    <input value="Offline" onClick={this.filterInstantUpdate } type="button"/>
 
                     <p>Station qty:  { this.stationQty }&emsp;
                         Pad qty:  { this.slotQty }&emsp;
@@ -131,7 +162,7 @@ export default class Stations extends React.Component {
                     </p>
 
 
-                    <StationTable stations={this.props.station} />
+                    <StationTable stations={this.props.filteredstation} />
                 </div>
             </div>
         )
