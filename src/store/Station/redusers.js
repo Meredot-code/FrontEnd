@@ -2,8 +2,26 @@ import {STATION_FETCH_DATA, SET_FILTERED_STATION} from "./actions";
 
 const defaultState = {
     station: [
-        {id: 1, pow: 127, location: 'loc1' },
-        {id: 2, pow: 100, location: 'loc2' }
+        {
+            "id_slots": [
+                "3"
+            ],
+            "arr_slots": [
+                {
+                    "_id": "5fec1b0ab906c0168740d42f",
+                    "slot_id": 3,
+                    "scooter_id": 4,
+                    "slot_status": 3,
+                    "slot_power": 100,
+                    "scooter_event": 11111
+                }
+            ],
+            "_id": "5ff25d73679f3fde441174b1",
+            "st_id": 1,
+            "location": "London,Piccadilly,10",
+            "picture": "pic2.png",
+            "info": "-"
+        }
     ],
     filteredstation: []
 };
