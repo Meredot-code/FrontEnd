@@ -1,0 +1,55 @@
+.Station {
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+.Station__body {
+  text-align: center;
+  max-width: 70%;
+  position: center;
+}
+
+.Station__selector-panel {
+  min-height: 29px;
+  padding-top: 29px;
+  border-top: 1px solid black;
+  position: center;
+}
+
+.Station__selector-panel-button {
+  padding-bottom: 10px;
+  border: none;
+  background-color: white;
+  font-family: "Courier New";
+  margin-right: 10px;
+ }
+
+.Station__selector-panel-button:active,
+.Station__selector-panel-button:focus,
+.Station__selector-panel-button:checked
+{
+  outline: none;
+  color: #30b483 !important;
+}
+
+.Station__selected-panel_button {
+  float: left;
+  margin-left: auto !important;
+  margin-right: auto;
+  width: 50%;
+}
+
+.Station__brief-info {
+  font-size: 14px;
+  margin-right: auto;
+  width: 75%;
+  font-family: "Courier New";
+}
+
+.Station__brief-info p {
+  margin-bottom: 0 !important;
+}
+
+.Station__list {
+ background-color: #e9fff7!important;
+}

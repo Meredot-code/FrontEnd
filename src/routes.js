@@ -5,6 +5,8 @@ import StationsConteiner from './components/StationsConteiner';
 import Registration from "./components/Registration";
 import Home from "./components/Home";
 import Scooter from "./components/ScooterConteiner";
+import Dashboard from "./components/DashboardConteiner";
+import PowerAndCost from "./components/PowerAndCost";
 
 export const  useRoutes = (isAuthenticated) => {
     if(isAuthenticated) {
@@ -22,6 +24,12 @@ export const  useRoutes = (isAuthenticated) => {
                     </Route>
                     <Route path="/sc" exec>
                         <Scooter/>
+                    </Route>
+                    <Route path="/db" exec>
+                        <Dashboard/>
+                    </Route>
+                    <Route path="/pac" exec>
+                        <PowerAndCost/>
                     </Route>
                     <Redirect to="/home"/>
                 </Switch>

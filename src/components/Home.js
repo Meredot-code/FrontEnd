@@ -35,7 +35,7 @@ export default class Header extends Component {
                     <div className="col-auto">
                         <div><p className="head">MAIN MENU</p>
                             <ul className="nav flex-column">
-                                <li className="nav-item"><a href="home" role="button">Dashboard</a></li>
+                                <li className="nav-item"><a href="db" role="button">Dashboard</a></li>
                                 <li className="nav-item"><a href="st" role="button">Stations</a></li>
                                 <li className="nav-item"><a href="sc" role="button">Scooters</a></li>
                             </ul>
@@ -44,7 +44,7 @@ export default class Header extends Component {
                     <div className="col-auto">
                         <div><p className="head">REPORTS</p>
                             <ul className="nav flex-column">
-                                <li className="nav-item"><a href="power-cost.html" role="button">Power and Cost</a></li>
+                                <li className="nav-item"><a href="pac" role="button">Power and Cost</a></li>
                                 <li className="nav-item"><a href="station-rating-usage.html" role="button">Station
                                     Rating</a></li>
                                 <li className="nav-item"><a href="billing.html" role="button">Billing &amp; History</a>
