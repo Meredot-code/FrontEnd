@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setScooter, setFilteredScooter} from '../store/Scooter/actions';
+import {setScooter, setFilteredScooter} from '../../store/Scooter/actions';
 import Scooter from "./Scooter";
 
 class ScooterContainer extends React.Component {

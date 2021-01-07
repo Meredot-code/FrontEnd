@@ -1,6 +1,7 @@
 import React from 'react';
 import lodashClonedeep from 'lodash.clonedeep';
 import MapsContainer from './Map';
+import "leaflet/dist/leaflet.css";
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -66,7 +67,7 @@ export default class Dashboard extends React.Component {
             <div>
                 <h3>Dashboard Page</h3>
 
-                {/*<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>*/}
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
                 <div>
                     <p>Station qty:  { this.stationQty }&emsp;
                         Pad qty:  { this.slotQty }&emsp;

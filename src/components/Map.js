@@ -6,19 +6,18 @@ import "leaflet/dist/leaflet.css";
 export default class Map extends Component {
     render() {
         return(
-            // <div style={{borderBottom: "1px solid black"}}>
-                <MapContainer center={[51.505, 0.18]} zoom={15} scrollWheelZoom={false}>
-                    <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    <Marker position={[51.505, 0.01]}>
-                        <Popup>
-                            A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                    </Marker>
-                </MapContainer>
-            // </div>
+            <MapContainer center={[51.505, 0.18]} zoom={15} scrollWheelZoom={false}>
+                <TileLayer
+                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                {/*<Marker position={[0, 0.01]}>*/}
+                {/*    <Popup>*/}
+                {/*        A pretty CSS3 popup. <br /> Easily customizable.*/}
+                {/*    </Popup>*/}
+                {/*</Marker>*/}
+            </MapContainer>
+
         )
     }
 }

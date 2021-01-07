@@ -1,8 +1,9 @@
 import React from "react";
+import './scooterList.scss';
 
 export default function ScooterTable(props) {
     const scooterList = props.scooter.map((item) =>
-        <tr key={item.sc_id}>
+        <tr className="sc-list__body__table" key={item.sc_id}>
             <td>{item.sc_id}&emsp;</td>
             <td>{item.sc_type}&emsp;</td>
             <td>{item.sc_pow}&emsp;</td>
@@ -14,10 +15,10 @@ export default function ScooterTable(props) {
 
     return(
         <div>
-            <table>
+            <table className="sc-list">
                 <tbody>
-                <tr style={{borderBottom: "1px solid black"}}>
-                    <td>ID&emsp;&emsp;&emsp;</td>
+                <tr className="sc-list__head__table-line">
+                    <td className="sc-list__head__table-line">ID&emsp;&emsp;&emsp;</td>
                     <td>Type&emsp;&emsp;</td>
                     <td>Charge level&emsp;&emsp;</td>
                     <td>Status&emsp;&emsp;</td>

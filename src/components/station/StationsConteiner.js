@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Station from './Stations';
-import { setStation, setFilteredStations } from '../store/Station/actions';
+import { setStation, setFilteredStations } from '../../store/Station/actions';
 
 class StationsConteiner extends React.Component {
 

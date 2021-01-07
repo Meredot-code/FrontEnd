@@ -1,0 +1,96 @@
+.sc {
+  border-top: 2px solid black;
+}
+
+.sc_head {
+ // max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sc__body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sc_selector-panel {
+  min-height: 29px;
+  padding-top: 29px;
+  border-top: 2px solid black;
+  position: center;
+}
+
+
+.sc__filter-button {
+  padding-bottom: 10px;
+  border: none;
+  background-color: white;
+  font-family: "Courier New";
+  margin-right: 8px;
+}
+
+
+.sc__return-button {
+  margin-bottom: 10px;
+  border: none;
+  background-color: white;
+  font-family: "Courier New";
+}
+
+.sc__filter-button:active,
+.sc__filter-button:focus,
+.sc__filter-button:checked
+{
+  outline: none;
+  color: #30b483 !important;
+}
+
+.sc__group_filter {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.sc_selected-location {
+  max-width: 80%;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sc__group-filter-button {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+.sc__group_brief-info {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sc__brief-info {
+  text-align: left;
+  font-size: 14px;
+  font-family: "Courier New";
+  margin-bottom: 0 !important;
+}
+
+.sc__group_brief-info p {
+  margin-bottom: 0 !important;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.sc__list {
+  background-color: #e9fff7!important;
+  height: 100vh;
+}
+.sc_list-size {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}

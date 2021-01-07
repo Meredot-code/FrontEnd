@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {Switch, Route, Redirect, BrowserRouter} from 'react-router-dom';
 import AuthContainer  from './components/AuthContainer';
-import StationsConteiner from './components/StationsConteiner';
+import StationsConteiner from './components/station/StationsConteiner';
 import Registration from "./components/Registration";
 import Home from "./components/Home";
-import Scooter from "./components/ScooterConteiner";
+import Scooter from "./components/scooter/ScooterConteiner";
 import Dashboard from "./components/DashboardConteiner";
 import PowerAndCost from "./components/PowerAndCost";
 

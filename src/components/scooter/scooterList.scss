@@ -1,0 +1,20 @@
+.sc-list {
+  //background-color: #30b483 !important;
+  margin-right: auto;
+  width: 100%;
+  font-family: "Courier New";
+}
+
+.sc-list__head__table-line {
+  height: 80px !important;
+  font-family: "Courier New";
+  border-bottom: 1px solid black;
+  font-weight:bold;
+}
+
+.sc-list__body__table,
+.sc-list__body__table td {
+  table-layout: fixed;
+  height: 50px !important;
+  border-bottom: 1px solid black;
+}
