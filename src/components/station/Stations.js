@@ -149,37 +149,42 @@ export default class Stations extends React.Component {
 
     render() {
         return(
-            <div className="Station">
-                <div className="Station__selector-panel">
-                    <div  >
-                        <div className="Station__selected-panel_button" >
-                            Country: <select className="Station__selector-panel-button">
+            <div className="st">
+              <input className="st__return-button" value="Scooter" type="button"/>
+                <div className="st__selector-panel">
+                    <div className="st__group_filter">
+                        <div className="st_selected-location">
+                            Country: <select className="st__selector-panel-button">
                                 <option>All</option>
                                 <option>Israel</option>
                             </select>
 
-                                City:<select className="Station__selector-panel-button">
+                                City:<select className="st__selector-panel-button">
                                 <option>All</option>
                                 <option>Tel Aviv</option>
                             </select>
                         </div>
-                        <div className="Station__selector-panel-button">
-                            <input className="Station__selector-panel-button" value="All" onClick={this.filterInstantUpdate } type="button"/>
-                            <input className="Station__selector-panel-button" value="Occupied" onClick={this.filterInstantUpdate } type="button"/>
-                            <input className="Station__selector-panel-button" value="Available" onClick={this.filterInstantUpdate } type="button"/>
-                            <input className="Station__selector-panel-button" value="Offline" onClick={this.filterInstantUpdate } type="button"/>
+                        <div className="st__group-selector-panel-button">
+                            <input className="st__selector-panel-button" value="All" onClick={this.filterInstantUpdate } type="button"/>
+                            <input className="st__selector-panel-button" value="Occupied" onClick={this.filterInstantUpdate } type="button"/>
+                            <input className="st__selector-panel-button" value="Available" onClick={this.filterInstantUpdate } type="button"/>
+                            <input className="st__selector-panel-button" value="Offline" onClick={this.filterInstantUpdate } type="button"/>
                         </div>
                     </div>
-                    <p className="Station__brief-info">
-                        Station qty:  { this.stationQty }&emsp;&emsp;
-                        Pad qty:  { this.slotQty }&emsp;&emsp;
-                        Available pads:  { this.availableQty }&emsp;&emsp;
-                        Occupied pads:  { this.occupiedQty }&emsp;&emsp;
-                        Out of work:   { this.outOfWork }
-                    </p>
+                    <div className="st__group_brief-info">
+                      <p className="st__brief-info">
+                          Station qty:  { this.stationQty }&emsp;&emsp;
+                          Pad qty:  { this.slotQty }&emsp;&emsp;
+                          Available pads:  { this.availableQty }&emsp;&emsp;
+                          Occupied pads:  { this.occupiedQty }&emsp;&emsp;
+                          Out of work:   { this.outOfWork }
+                      </p>
+                    </div>
 
-                    <div className="Station__list">
-                        <StationTable stations={this.props.filteredstation} />
+                    <div className="st__list">
+                        <div className="st_list-size">
+                            <StationTable stations={this.props.filteredstation} />
+                        </div>
                     </div>
                 </div>
             </div>

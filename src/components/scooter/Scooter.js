@@ -113,37 +113,37 @@ export default class Scooter extends React.Component {
         return(
             <div className="sc">
                 <input className="sc__return-button" value="Scooter" type="button"/>
-                <div className="sc_head">
-                    <div className="sc__body">
-                        <div className="sc__group_filter">
-                            <div className="sc_selected-location" >
-                                Country: <select className="sc__filter-button">
-                                    <option>All</option>
-                                    <option>Israel</option>
-                                </select>
-                                    City:<select className="sc__filter-button">
-                                    <option>All</option>
-                                    <option>Tel Aviv</option>
-                                </select>
-                            </div>
-                            <div className="sc__group-filter-button">
-                                <input className="sc__filter-button" value="All" onClick={this.filterInstantUpdate } type="button"/>
-                                <input className="sc__filter-button" value="Charging" onClick={this.filterInstantUpdate } type="button"/>
-                                <input className="sc__filter-button"value="Charged" onClick={this.filterInstantUpdate } type="button"/>
-                                <input className="sc__filter-button"  value="Not charged" onClick={this.filterInstantUpdate } type="button"/>
-                            </div>
+                <div className="sc__body">
+                    <div className="sc__group_filter">
+                        <div className="sc_selected-location" >
+                            Country: <select className="sc__filter-button">
+                                <option>All</option>
+                                <option>Israel</option>
+                            </select>
+                                City:<select className="sc__filter-button">
+                                <option>All</option>
+                                <option>Tel Aviv</option>
+                            </select>
                         </div>
-                        <div className="sc__group_brief-info">
-                            <p className="sc__brief-info">Scooters qty: {this.scootersQty}&emsp;
+                        <div className="sc__group-filter-button">
+                            <input className="sc__filter-button" value="All" onClick={this.filterInstantUpdate } type="button"/>
+                            <input className="sc__filter-button" value="Charging" onClick={this.filterInstantUpdate } type="button"/>
+                            <input className="sc__filter-button"value="Charged" onClick={this.filterInstantUpdate } type="button"/>
+                            <input className="sc__filter-button"  value="Not charged" onClick={this.filterInstantUpdate } type="button"/>
+                        </div>
+                    </div>
+                    <div className="sc__group_brief-info">
+                        <p className="sc__brief-info">
+                            Scooters qty: {this.scootersQty}&emsp;
                             Granted: {this.grantedQty}&emsp;
                             Denied: {this.deniedQty}&emsp;
                             Charging: {this.chargingQty}&emsp;
-                            Not charging: {this.notChargingQty}</p>
-                        </div>
-                        <div className="sc__list">
-                            <div className="sc_list-size">
-                                <ScooterTable scooter={this.props.filteredscooter}/>
-                            </div>
+                            Not charging: {this.notChargingQty}
+                        </p>
+                    </div>
+                    <div className="sc__list">
+                        <div className="sc_list-size">
+                            <ScooterTable scooter={this.props.filteredscooter}/>
                         </div>
                     </div>
                 </div>

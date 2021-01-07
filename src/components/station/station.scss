@@ -1,22 +1,26 @@
-.Station {
+.st {
   text-align: center;
-  border-top: 1px solid black;
 }
 
-.Station__body {
+.st__body {
   text-align: center;
-  max-width: 70%;
   position: center;
 }
 
-.Station__selector-panel {
+.st__selector-panel {
   min-height: 29px;
   padding-top: 29px;
-  border-top: 1px solid black;
+  border-top: 2px solid black;
   position: center;
 }
 
-.Station__selector-panel-button {
+.st__group-selector-panel-button{
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
+}
+
+.st__selector-panel-button {
   padding-bottom: 10px;
   border: none;
   background-color: white;
@@ -24,32 +28,72 @@
   margin-right: 10px;
  }
 
-.Station__selector-panel-button:active,
-.Station__selector-panel-button:focus,
-.Station__selector-panel-button:checked
+.st__selector-panel-button:active,
+.st__selector-panel-button:focus,
+.st__selector-panel-button:checked
 {
   outline: none;
   color: #30b483 !important;
 }
 
-.Station__selected-panel_button {
+.st__selected-panel_button {
   float: left;
   margin-left: auto !important;
   margin-right: auto;
   width: 50%;
 }
 
-.Station__brief-info {
+.st__brief-info {
   font-size: 14px;
-  margin-right: auto;
-  width: 75%;
+  margin-right: 0;
   font-family: "Courier New";
 }
 
-.Station__brief-info p {
+.st__brief-info p {
   margin-bottom: 0 !important;
 }
 
-.Station__list {
+.st__list {
  background-color: #e9fff7!important;
+ height: 100vh;
+}
+
+.st_list-size {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.st__group_brief-info {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.st__group_brief-info p {
+  margin-bottom: 0 !important;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.st__group_filter {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.st__return-button {
+  margin-bottom: 10px;
+  border: none;
+  background-color: white;
+  font-family: "Courier New";
+}
+
+.st_selected-location {
+  max-width: 80%;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
 }
