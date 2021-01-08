@@ -7,6 +7,7 @@ import Home from "./components/home/Home";
 import Scooter from "./components/scooter/ScooterConteiner";
 import Dashboard from "./components/dashboard/DashboardConteiner";
 import PowerAndCost from "./components/PowerAndCost";
+import Auth from "./components/AuthContainer"
 
 export const  useRoutes = (isAuthenticated) => {
     if(isAuthenticated) {
@@ -39,16 +40,10 @@ export const  useRoutes = (isAuthenticated) => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/home" exec>
-                    <AuthContainer/>
+                <Route path="/auth" exec>
+                    <Auth/>
                 </Route>
-                <Route path="/st" exec>
-                    <AuthContainer/>
-                </Route>
-                <Route path="/sc" exec>
-                    <AuthContainer/>
-                </Route>
-                <Redirect to="/home"/>
+                <Redirect to="/auth"/>
             </Switch>
         </BrowserRouter>
     )

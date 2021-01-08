@@ -4,6 +4,7 @@ import StationTable from './stationsList';
 import './station.scss';
 import { Icon, InlineIcon } from '@iconify/react';
 import longArrowAltLeft from '@iconify-icons/fa-solid/long-arrow-alt-left';
+import Header from "../header/Header";
 
 
 export default class Stations extends React.Component {
@@ -152,43 +153,46 @@ export default class Stations extends React.Component {
 
     render() {
         return(
-            <div className="st">
-                <div className="st_button-beck">
-                    <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Stations</a>
-                </div>
-                <div className="st__selector-panel">
-                    <div className="st__group_filter">
-                        <div className="st_selected-location">
-                            Country: <select className="st__selector-panel-button">
-                                <option>All</option>
-                                <option>Israel</option>
-                            </select>
-
-                                City:<select className="st__selector-panel-button">
-                                <option>All</option>
-                                <option>Tel Aviv</option>
-                            </select>
-                        </div>
-                        <div className="st__group-selector-panel-button">
-                            <input className="st__selector-panel-button" value="All" onClick={this.filterInstantUpdate } type="button"/>
-                            <input className="st__selector-panel-button" value="Occupied" onClick={this.filterInstantUpdate } type="button"/>
-                            <input className="st__selector-panel-button" value="Available" onClick={this.filterInstantUpdate } type="button"/>
-                            <input className="st__selector-panel-button" value="Offline" onClick={this.filterInstantUpdate } type="button"/>
-                        </div>
+            <div>
+                <Header/>
+                <div className="st">
+                    <div className="st_button-beck">
+                        <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Stations</a>
                     </div>
-                    <div className="st__group_brief-info">
-                      <p className="st__brief-info">
-                          Station qty:  { this.stationQty }&emsp;&emsp;
-                          Pad qty:  { this.slotQty }&emsp;&emsp;
-                          Available pads:  { this.availableQty }&emsp;&emsp;
-                          Occupied pads:  { this.occupiedQty }&emsp;&emsp;
-                          Out of work:   { this.outOfWork }
-                      </p>
-                    </div>
+                    <div className="st__selector-panel">
+                        <div className="st__group_filter">
+                            <div className="st_selected-location">
+                                Country: <select className="st__selector-panel-button">
+                                    <option>All</option>
+                                    <option>Israel</option>
+                                </select>
 
-                    <div className="st__list">
-                        <div className="st_list-size">
-                            <StationTable stations={this.props.filteredstation} />
+                                    City:<select className="st__selector-panel-button">
+                                    <option>All</option>
+                                    <option>Tel Aviv</option>
+                                </select>
+                            </div>
+                            <div className="st__group-selector-panel-button">
+                                <input className="st__selector-panel-button" value="All" onClick={this.filterInstantUpdate } type="button"/>
+                                <input className="st__selector-panel-button" value="Occupied" onClick={this.filterInstantUpdate } type="button"/>
+                                <input className="st__selector-panel-button" value="Available" onClick={this.filterInstantUpdate } type="button"/>
+                                <input className="st__selector-panel-button" value="Offline" onClick={this.filterInstantUpdate } type="button"/>
+                            </div>
+                        </div>
+                        <div className="st__group_brief-info">
+                          <p className="st__brief-info">
+                              Station qty:  { this.stationQty }&emsp;&emsp;
+                              Pad qty:  { this.slotQty }&emsp;&emsp;
+                              Available pads:  { this.availableQty }&emsp;&emsp;
+                              Occupied pads:  { this.occupiedQty }&emsp;&emsp;
+                              Out of work:   { this.outOfWork }
+                          </p>
+                        </div>
+
+                        <div className="st__list">
+                            <div className="st_list-size">
+                                <StationTable stations={this.props.filteredstation} />
+                            </div>
                         </div>
                     </div>
                 </div>
