@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './auth.scss';
+
 
 export default class Auth extends React.Component {
     constructor(props) {
@@ -11,15 +13,29 @@ export default class Auth extends React.Component {
     }
 
     onEmailChange(event) {
-        this.props.setEmailText(event.target.value)
+        this.props.setEmailText(event.target.value);
     }
 
     onPasswordChange(event) {
-        this.props.setPasswordText(event.target.value)
+        this.props.setPasswordText(event.target.value);
     }
 
     onLogIn() {
-        console.log("LOGIN");
+        {
+            const url = new URL('http://localhost:5000/api/user/us/roma');
+            fetch(url.toString())
+                .then(response => {
+                    if (!response.ok) {
+                        console.log('error');
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log("DATA->" + data);
+                    this.props.setAuthenticate(true);
+                    document.location.href="/home";
+                })
+        }
     }
 
     render() {

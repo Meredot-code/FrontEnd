@@ -16,7 +16,7 @@ export default class Dashboard extends React.Component {
         this.slotQty = 0;
         this.availableQty = 0;
         this.occupiedQty = 0;
-        this.outOfWork = 0;
+        this.scooterQty = 0;
 
         this.setDashboard = this.setDashboard.bind(this);
         this.onGetDashboard = this.onGetDashboard.bind(this);
@@ -26,21 +26,18 @@ export default class Dashboard extends React.Component {
         this.props.setDashboard(dashboard);
     };
 
-
     countParameterStation(data) {
         this.stationQty = 0;
         this.slotQty = 0;
         this.availableQty = 0;
         this.occupiedQty = 0;
-        this.outOfWork = 0;
 
         data.forEach((item) => {
             this.stationQty++;
             if(item.arr_slots.length > 0) this.slotQty += item.arr_slots.length
             item.arr_slots.forEach(slot => {
                 if(slot.slot_status === 0) this.availableQty++;
-                if(slot.slot_status === 1) this.occupiedQty++;
-                if(slot.slot_status > 3) this.outOfWork++;
+                if(slot.slot_status !== 0) this.occupiedQty++;
             })
         });
     };
@@ -62,8 +59,22 @@ export default class Dashboard extends React.Component {
             .then( setTimeout(this.onGetDashboard, 1000))
     }
 
+    getScooter() {
+        fetch('http://localhost:5000/api/scooter/all')
+            .then(response => {
+                if (!response.ok) {
+                    console.log('error');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                this.scooterQty = data.length;
+            })
+    }
+
     componentDidMount() {
         this.onGetDashboard();
+        this.getScooter();
     }
 
     render() {
@@ -71,27 +82,44 @@ export default class Dashboard extends React.Component {
             <div>
                 <Header/>
                 <div className="db">
-
                     <div className="db_button-beck">
                         <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Dashboard</a>
                     </div>
-
-                    <div className="db__body">
-                        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
-                        <div>
-                            <p>Station qty:  { this.stationQty }&emsp;</p>
-                            <p>    Pad qty:  { this.slotQty }&emsp;</p>
-                                <p> Available pads:  { this.availableQty }&emsp;</p>
-                                    <p> Occupied pads:  { this.occupiedQty }&emsp;</p>
-                                <p>Out of work:   { this.outOfWork }     </p>
-
-
-                            {/*<StationTable stations={this.props.dashboard} />*/}
+                    <div className="db__head">
+                        <div className="db__body">
+                            <div className="row">
+                                <div className="col-md mb-2 db_ticket">
+                                    <p>Stations:  { this.stationQty }&emsp;</p>
+                                    <p className="db_ticket_info">{ this.stationQty }</p>
+                                    <p className="db_ticket_info-name">ONLINE</p>
+                                </div>
+                                <div className="col-md mb-2 db_ticket">
+                                    <p>Slots:  { this.slotQty }&emsp;</p>
+                                    <p className="db_ticket_info">{ this.availableQty }</p>
+                                    <p className="db_ticket_info-name">AVAILABLE</p>
+                                </div>
+                                <div className="col-md mb-2 db_ticket">
+                                    <p> Scooters:  { this.scooterQty}&emsp;</p>
+                                    <p className="db_ticket_info">{ this.occupiedQty}</p>
+                                    <p className="db_ticket_info-name">ON CHARGE</p>
+                                </div>
+                                <div className="col-md mb-2 db_ticket">
+                                    <p> Balance: </p>
+                                    <p className="db_ticket_info">100$</p>
+                                    <p className="db_ticket_info-name">END 24/06/21</p>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="db_map">
+                                    <p>Popular Station</p>
+                                </div>
+                                <div className="db_map">
+                                    <p>Map</p>
+                                    <MapsContainer/>
+                                </div>
+                            </div>
+                            <p>Stations</p>
                         </div>
-                        <div>
-                        <MapsContainer/>
-                        </div>
-                        <p>XXXX</p>
                     </div>
                 </div>
             </div>
