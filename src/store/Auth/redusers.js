@@ -2,7 +2,8 @@ import {AUTH_CHANGE_EMAIL, AUTH_CHANGE_PASSWORD} from "./actions";
 
 const defaultState = {
     email: '',
-    password: ''
+    password: '',
+    isAuth: true
 };
 
 export const authReducer = (state = defaultState, action) => {

@@ -1,0 +1,29 @@
+.auth-container {
+  margin-top: 20%;
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  border: none;
+}
+
+.auth-container-input p input,
+.auth-container-input {
+  border: none;
+  font-family: "Courier New";
+  font-size: 20px;
+}
+
+input {
+  background-color: #E8F0FE;
+  min-height: 35px;
+  border-radius: 5px;
+}
+
+.auth-container-button {
+  border: none;
+  background-color: #30b483;
+  width: 100px;
+  height: 35px;
+  border-radius: 5px;
+}

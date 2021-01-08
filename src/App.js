@@ -8,8 +8,16 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 const store = createStore(rootReducer, composeWithDevTools());
 
+console.log("store" + store.getState);
+
+function auth(store) {
+   if( store.getState() && store.getState().auth.isAuth === true){
+        return true;
+   }
+}
+
 function App() {
-    const routes = useRoutes(true);
+    const routes = useRoutes(auth(store));
     return (
       <Provider store={store}>
         <div className="App">

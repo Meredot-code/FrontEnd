@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Auth from './Auth';
-import {setEmailText, setPasswordText} from '../store/Auth/actions';
+import {setEmailText, setPasswordText} from '../../store/Auth/actions';
 
 class AuthContainer extends React.Component {
 
