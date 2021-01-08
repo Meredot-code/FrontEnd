@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { map } from 'underscore';
+import './home.scss';
 
 export default class Header extends Component {
 
@@ -16,7 +17,7 @@ export default class Header extends Component {
         ];
 
         return (
-            <div className='headerBody'>
+            <div className='header-body'>
                 {/*<div>*/}
                 {/*    <h1>POWER MOBILITY</h1>*/}
                 {/*</div>*/}
@@ -31,34 +32,34 @@ export default class Header extends Component {
 
                 {/*</div>*/}
 
-                <div className="row justify-content-center">
+                <div className="main-nav-rom row justify-content-center">
                     <div className="col-auto">
-                        <div><p className="head">MAIN MENU</p>
+                        <div><p className="main-nav-bar">MAIN MENU</p>
                             <ul className="nav flex-column">
-                                <li className="nav-item"><a href="db" role="button">Dashboard</a></li>
-                                <li className="nav-item"><a href="st" role="button">Stations</a></li>
-                                <li className="nav-item"><a href="sc" role="button">Scooters</a></li>
+                                <li className="nav-item-menu"><a href="db" role="button">Dashboard</a></li>
+                                <li className="nav-item-menu"><a href="st" role="button">Stations</a></li>
+                                <li className="nav-item-menu"><a href="sc" role="button">Scooters</a></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-auto">
-                        <div><p className="head">REPORTS</p>
+                        <div><p className="main-nav-bar">REPORTS</p>
                             <ul className="nav flex-column">
-                                <li className="nav-item"><a href="pac" role="button">Power and Cost</a></li>
-                                <li className="nav-item"><a href="station-rating-usage.html" role="button">Station
+                                <li className="nav-item-menu"><a href="pac" role="button">Power and Cost</a></li>
+                                <li className="nav-item-menu"><a href="station-rating-usage.html" role="button">Station
                                     Rating</a></li>
-                                <li className="nav-item"><a href="billing.html" role="button">Billing &amp; History</a>
+                                <li className="nav-item-menu"><a href="billing.html" role="button">Billing &amp; History</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-auto">
-                        <div><p className="head">MAIL</p>
+                        <div><p className="main-nav-bar">MAIL</p>
                             <ul className="nav flex-column">
-                                <li className="nav-item"><a href="messages-new.html" role="button">New Massage</a></li>
-                                <li className="nav-item"><a href="messages-incoming.html" role="button">Incoming
+                                <li className="nav-item-menu"><a href="messages-new.html" role="button">New Massage</a></li>
+                                <li className="nav-item-menu"><a href="messages-incoming.html" role="button">Incoming
                                     Message</a></li>
-                                <li className="nav-item"><a href="messages-outgoing.html" role="button">Outgoing
+                                <li className="nav-item-menu"><a href="messages-outgoing.html" role="button">Outgoing
                                     Message</a></li>
                             </ul>
                         </div>

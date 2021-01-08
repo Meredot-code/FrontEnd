@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Dashboard from './Dashboard';
-import { setDashboard } from '../store/Dashboard/actions';
+import { setDashboard } from '../../store/Dashboard/actions';
 import "leaflet/dist/leaflet.css";
 
 class DashboardConteiner extends React.Component {

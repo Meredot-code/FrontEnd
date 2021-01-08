@@ -1,7 +1,10 @@
 import React from 'react';
 import lodashClonedeep from 'lodash.clonedeep';
-import MapsContainer from './Map';
+import MapsContainer from '../Map';
 import "leaflet/dist/leaflet.css";
+import {Icon} from "@iconify/react";
+import longArrowAltLeft from "@iconify-icons/fa-solid/long-arrow-alt-left";
+import './dashboard.scss';
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -64,25 +67,29 @@ export default class Dashboard extends React.Component {
 
     render() {
         return(
-            <div>
-                <h3>Dashboard Page</h3>
+            <div className="db">
 
-                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
-                <div>
-                    <p>Station qty:  { this.stationQty }&emsp;
-                        Pad qty:  { this.slotQty }&emsp;
-                        Available pads:  { this.availableQty }&emsp;
-                        Occupied pads:  { this.occupiedQty }&emsp;
-                        Out of work:   { this.outOfWork }
-                    </p>
-
-
-                    {/*<StationTable stations={this.props.dashboard} />*/}
+                <div className="db_button-beck">
+                    <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Dashboard</a>
                 </div>
-                <div>
-                <MapsContainer/>
+
+                <div className="db__body">
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
+                    <div>
+                        <p>Station qty:  { this.stationQty }&emsp;</p>
+                        <p>    Pad qty:  { this.slotQty }&emsp;</p>
+                            <p> Available pads:  { this.availableQty }&emsp;</p>
+                                <p> Occupied pads:  { this.occupiedQty }&emsp;</p>
+                            <p>Out of work:   { this.outOfWork }     </p>
+
+
+                        {/*<StationTable stations={this.props.dashboard} />*/}
+                    </div>
+                    <div>
+                    <MapsContainer/>
+                    </div>
+                    <p>XXXX</p>
                 </div>
-                <p>XXXX</p>
             </div>
         )
     }

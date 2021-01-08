@@ -2,6 +2,9 @@ import React from 'react';
 import lodashClonedeep from 'lodash.clonedeep';
 import StationTable from './stationsList';
 import './station.scss';
+import { Icon, InlineIcon } from '@iconify/react';
+import longArrowAltLeft from '@iconify-icons/fa-solid/long-arrow-alt-left';
+
 
 export default class Stations extends React.Component {
     constructor(props) {
@@ -150,7 +153,9 @@ export default class Stations extends React.Component {
     render() {
         return(
             <div className="st">
-              <input className="st__return-button" value="Scooter" type="button"/>
+                <div className="st_button-beck">
+                    <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Stations</a>
+                </div>
                 <div className="st__selector-panel">
                     <div className="st__group_filter">
                         <div className="st_selected-location">

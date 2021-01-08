@@ -2,7 +2,7 @@ import './App.css';
 import {createStore} from "redux";
 import rootReducer from './store/redusers';
 import {Provider} from "react-redux";
-import Header from './components/Header';
+import Header from './components/header/Header';
 import {useRoutes} from './routes';
 import { composeWithDevTools } from "redux-devtools-extension";
 

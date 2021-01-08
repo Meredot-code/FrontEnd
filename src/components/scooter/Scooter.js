@@ -2,6 +2,12 @@ import React from 'react';
 import { Dropdown } from 'semantic-ui-react'
 import ScooterTable from './scooterList';
 import './scooter.scss';
+import { withRouter } from 'react-router-dom';
+import {Icon} from "@iconify/react";
+import longArrowAltLeft from "@iconify-icons/fa-solid/long-arrow-alt-left";
+
+// const GoBack = ({ history }) => <img src="./images/back.png" onClick={
+//     () => history.goBack()} alt="Go back" />;
 
 export default class Scooter extends React.Component {
     constructor(props) {
@@ -112,7 +118,9 @@ export default class Scooter extends React.Component {
     render() {
         return(
             <div className="sc">
-                <input className="sc__return-button" value="Scooter" type="button"/>
+                <div className="sc_button-beck">
+                    <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Scooters</a>
+                </div>
                 <div className="sc__body">
                     <div className="sc__group_filter">
                         <div className="sc_selected-location" >
