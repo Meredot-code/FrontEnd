@@ -63,7 +63,9 @@
   font-weight:bold;
 }
 .db_map {
-  min-width: 33%;
-  background-color: #61dafb;
-  margin: 1rem;
+  min-width: 70%;
+  max-height: 100px;
+}
+.db_map-addr {
+  max-height: 100px;
 }

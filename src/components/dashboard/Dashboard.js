@@ -1,6 +1,6 @@
 import React from 'react';
 import lodashClonedeep from 'lodash.clonedeep';
-import MapsContainer from '../Map';
+import MapsContainer from './Map';
 import "leaflet/dist/leaflet.css";
 import {Icon} from "@iconify/react";
 import longArrowAltLeft from "@iconify-icons/fa-solid/long-arrow-alt-left";
@@ -110,11 +110,11 @@ export default class Dashboard extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="db_map">
+                                <div className="col-md mb-8 db_map-addr">
                                     <p>Popular Station</p>
                                 </div>
-                                <div className="db_map">
-                                    <p>Map</p>
+                                <div className="col-md mb-2 db_map">
+                                    <p>Map of Station</p>
                                     <MapsContainer/>
                                 </div>
                             </div>

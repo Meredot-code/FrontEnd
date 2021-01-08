@@ -10,6 +10,7 @@
     "bootstrap": "^4.5.3",
     "google-maps-react": "^2.0.6",
     "leaflet": "^1.7.1",
+    "leaflet-control-geocoder": "^2.1.0",
     "lodash": "^4.17.20",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
