@@ -5,7 +5,7 @@ import StationsConteiner from './components/station/StationsConteiner';
 import Home from "./components/home/Home";
 import Scooter from "./components/scooter/ScooterConteiner";
 import Dashboard from "./components/dashboard/DashboardConteiner";
-import PowerAndCost from "./components/PowerAndCost";
+import PowerAndCost from "./components/powerAndCost/PowerAndCost";
 import Auth from "./components/auth/AuthContainer"
 
 

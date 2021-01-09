@@ -118,7 +118,6 @@ export default class Dashboard extends React.Component {
                                     <MapsContainer/>
                                 </div>
                             </div>
-                            <p>Stations</p>
                         </div>
                     </div>
                 </div>
