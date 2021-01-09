@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
-import L from "leaflet";
+import Lf from "leaflet";
 
 import icon from "./constants";
 
@@ -10,18 +10,18 @@ export default function LeafletControlGeocoder() {
     const map = useMap();
 
     useEffect(() => {
-        let geocoder = L.Control.Geocoder.nominatim();
+        let geocoder = Lf.Control.Geocoder.nominatim();
         if (typeof URLSearchParams !== "undefined" && window.location.search) {
             let params = new URLSearchParams(window.location.search);
             let geocoderString = params.get("geocoder");
-            if (geocoderString && L.Control.Geocoder[geocoderString]) {
-                geocoder = L.Control.Geocoder[geocoderString]();
+            if (geocoderString && Lf.Control.Geocoder[geocoderString]) {
+                geocoder = Lf.Control.Geocoder[geocoderString]();
             } else if (geocoderString) {
                 console.warn("Unsupported geocoder", geocoderString);
             }
         }
 
-        L.Control.geocoder({
+        Lf.Control.geocoder({
             query: "",
             placeholder: "Search here...",
             defaultMarkGeocode: false,
@@ -29,7 +29,7 @@ export default function LeafletControlGeocoder() {
         })
             .on("markgeocode", function (e) {
                 let latlng = e.geocode.center;
-                L.marker(latlng, { icon })
+                Lf.marker(latlng, { icon })
                     .addTo(map)
                     .bindPopup(e.geocode.name)
                     .openPopup();

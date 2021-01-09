@@ -114,7 +114,6 @@ export default class Dashboard extends React.Component {
                                     <p>Popular Station</p>
                                 </div>
                                 <div className="col-md mb-2 db_map">
-                                    <p>Map of Station</p>
                                     <MapsContainer/>
                                 </div>
                             </div>

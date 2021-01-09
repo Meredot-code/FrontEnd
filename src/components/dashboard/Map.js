@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import LeafletControlGeocoder from "./LeafletControlGeocoder";
 
 export default function MapsContainer() {
-    const position = [51.505, -0.09];
+    const position = [51.505, 31.3];
 
     return (
         <MapContainer center={position} zoom={13} style={{ height: "400px" }}>

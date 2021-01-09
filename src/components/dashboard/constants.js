@@ -1,7 +1,7 @@
-import L from "leaflet";
+import Lf from "leaflet";
 
-export default L.icon({
-    iconSize: [20, 20],
+export default Lf.icon({
+    iconSize: [25, 41],
     iconAnchor: [10, 41],
     popupAnchor: [2, -40],
     iconUrl: "https://unpkg.com/leaflet@1.6/dist/images/marker-icon.png",
