@@ -7,7 +7,7 @@ export default function ScooterTable(props) {
             <td>{item.sc_id}&emsp;</td>
             <td>{item.sc_type}&emsp;</td>
             <td>{item.sc_pow}&emsp;</td>
-            <td>{item.sc_status === 0 ? 'Charging' : 'Not charging'}&emsp;</td>
+            <td on>{item.sc_status === 0 ? 'Charging' : 'Not charging'}&emsp;</td>
             <td>{item.sc_perm === 0 ? 'Denied' : 'Granted'}&emsp;</td>
             <td>{item.sc_location}&emsp;</td>
         </tr>

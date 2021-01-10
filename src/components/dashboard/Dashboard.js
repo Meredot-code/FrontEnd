@@ -1,11 +1,11 @@
 import React from 'react';
 import lodashClonedeep from 'lodash.clonedeep';
-import MapsContainer from './Map';
 import "leaflet/dist/leaflet.css";
 import {Icon} from "@iconify/react";
 import longArrowAltLeft from "@iconify-icons/fa-solid/long-arrow-alt-left";
 import './dashboard.scss';
 import Header from "../header/Header";
+import MapCenterMark from "./MapCenterMark";
 
 export default class Dashboard extends React.Component {
     constructor(props) {
@@ -31,9 +31,13 @@ export default class Dashboard extends React.Component {
         this.slotQty = 0;
         this.availableQty = 0;
         this.occupiedQty = 0;
+        this.geodata = [];
+
 
         data.forEach((item) => {
             this.stationQty++;
+            item.geodata ? this.geodata.push(item.geodata + ',' + item.location) : this.geodata.push([51, 31]);
+            // console.log(this.geodata);
             if(item.arr_slots.length > 0) this.slotQty += item.arr_slots.length
             item.arr_slots.forEach(slot => {
                 if(slot.slot_status === 0) this.availableQty++;
@@ -110,11 +114,11 @@ export default class Dashboard extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-md mb-8 db_map-addr">
-                                    <p>Popular Station</p>
-                                </div>
+                                {/*<div className="col-md mb-8 db_map-addr">*/}
+                                {/*    <p>Popular Station</p>*/}
+                                {/*</div>*/}
                                 <div className="col-md mb-2 db_map">
-                                    <MapsContainer/>
+                                    {this.geodata ? <MapCenterMark geodata={this.geodata}/> : <p>LOADING MAP</p>}
                                 </div>
                             </div>
                         </div>

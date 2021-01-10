@@ -1,46 +1,28 @@
 import React, { Component } from 'react';
-import {DropdownButton, Dropdown} from "react-bootstrap";
-import Pactable from './pacList';
+import Header from "../header/Header";
+import {Icon} from "@iconify/react";
+import longArrowAltLeft from "@iconify-icons/fa-solid/long-arrow-alt-left";
+import './pac.scss';
 
 
 export default class PowerAndCost extends Component {
 
     render() {
-
-        return (
+        return(
             <div>
-                <p>Company:PowerMobility</p>
-                <hr/>
-                Month: <select>
-                    <option>All</option>
-                    <option>Israel</option>
-                </select>
+                <Header/>
+                <div className="pac">
+                    <div className="pac_button-beck">
+                        <a href="home" role="button"> <Icon icon={longArrowAltLeft} />Power and Cost</a>
+                    </div>
+                    <div className="pac__head">
+                        <div>
 
-                Year:<select>
-                    <option>All</option>
-                    <option>Israel</option>
-                </select>
-                <hr/>
-                Country: <select>
-                    <option>All</option>
-                    <option>Israel</option>
-                </select>
+                        </div>
 
-                City:<select>
-                    <option>All</option>
-                    <option>Israel</option>
-                </select>
-                <hr/>
-
-                <Pactable/>
-
-
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </DropdownButton>
+                    </div>
+                </div>
             </div>
-        );
+        )
     }
 }
