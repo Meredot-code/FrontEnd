@@ -33,7 +33,7 @@ export default class Auth extends React.Component {
                     return response.json();
                 })
                 .then((data) => {
-                    if(data.password) {
+                    if(data.password && data.password === this.props.password) {
                         let org = data.org;
                         this.props.setAuthenticate(true);
                         document.location.href="/home";
