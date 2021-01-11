@@ -63,9 +63,31 @@
   font-weight:bold;
 }
 .db_map {
-  min-width: 70%;
-  max-height: 100px;
+  min-width: 60%;
+  min-height: 400px;
+  font-family: "Courier New", serif;
 }
-.db_map-addr {
-  max-height: 100px;
+.db_map p{
+  font-weight:bold;
+  font-family: "Courier New", serif;
+}
+
+.db_map a{
+  margin-bottom: 0;
+}
+
+.db_map ul{
+  font-family: "Courier New", serif;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  margin:5px;
+}
+.db_map ul:hover {
+  color: #31ac7f;
+  font-weight: bold;
+  cursor: default;
+}
+
+.db_map-addr a {
+  font-weight:normal;
 }

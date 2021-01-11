@@ -14,7 +14,7 @@ import IncomingMessage from './components/incomingMessage/incomingMessage';
 import OutgoingMessage from './components/outgoingMessage/outgoingMessage';
 
 export const  useRoutes = (isAuthenticated) => {
-    if(true) {
+    if(isAuthenticated) {
         return (
             <BrowserRouter>
                 <Switch>

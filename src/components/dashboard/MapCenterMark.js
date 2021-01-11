@@ -34,13 +34,14 @@ export default function MapCenterMark(geodata) {
         return (
             <div className="row">
                 <div className="col-md mb-8 db_map-addr">
+                    <p>Popular Station</p>
                     {geoposition.map((item) => {
                         return (
-                            <li onClick={handleChangeList}>{item}</li>
+                            <ul onClick={handleChangeList}>{item}</ul>
                         )
                     })}
                 </div>
-                <div className="col-md mb-2 db_map">
+                <div className="col-md mb-3 db_map">
                     <MapComp coords={coords}/>
                 </div>
             </div>

@@ -22,7 +22,9 @@ export default class Auth extends React.Component {
 
     onLogIn() {
         {
-            const url = new URL('http://localhost:5000/api/user/us/roma');
+            let username = this.props.email;
+            let password = this.props.password;
+            const url = new URL('http://localhost:5000/api/user/us/' + username);
             fetch(url.toString())
                 .then(response => {
                     if (!response.ok) {
@@ -31,9 +33,17 @@ export default class Auth extends React.Component {
                     return response.json();
                 })
                 .then((data) => {
-                    console.log("DATA->" + data);
-                    this.props.setAuthenticate(true);
-                    document.location.href="/home";
+                    if(data.password) {
+                        let org = data.org;
+                        this.props.setAuthenticate(true);
+                        document.location.href="/home";
+                        localStorage.setItem("isAuth", "xS1tnMgfDt");
+                        localStorage.setItem("user", username);
+                        localStorage.setItem("org", org);
+                    } else {
+
+                    }
+                    this.props.setAuthenticate(false);
                 })
         }
     }

@@ -37,7 +37,6 @@ export default class Dashboard extends React.Component {
         data.forEach((item) => {
             this.stationQty++;
             item.geodata ? this.geodata.push(item.geodata + ',' + item.location) : this.geodata.push([51, 31]);
-            // console.log(this.geodata);
             if(item.arr_slots.length > 0) this.slotQty += item.arr_slots.length
             item.arr_slots.forEach(slot => {
                 if(slot.slot_status === 0) this.availableQty++;
@@ -117,7 +116,7 @@ export default class Dashboard extends React.Component {
                                 {/*<div className="col-md mb-8 db_map-addr">*/}
                                 {/*    <p>Popular Station</p>*/}
                                 {/*</div>*/}
-                                <div className="col-md mb-2 db_map">
+                                <div className="col-md mb-3 db_map">
                                     {this.geodata ? <MapCenterMark geodata={this.geodata}/> : <p>LOADING MAP</p>}
                                 </div>
                             </div>

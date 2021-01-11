@@ -1,4 +1,4 @@
-.brand-container {
+.brand-container-logo {
   text-align: left;
   margin-top: 30px;
   margin-left: 20px;
@@ -7,10 +7,34 @@
   margin-bottom: 40px;
 }
 
+.brand-container {
+  text-align: right;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: 20px;
+  font-family: "Courier New";
+  margin-bottom: 40px;
+}
+.brand-container-text {
+  text-align: left !important;
+}
+
 .brand-image {
   text-align: left;
   margin-left: 0;
 }
+
+.brand-container p {
+  margin-bottom: 0;
+}
+
+.brand-container-button {
+  border: none;
+  background-color: white;
+  color: #1155cc !important;
+  font-weight: bold;
+}
+
 .row {
   margin-top: 30px !important;
   margin-left: 20% !important;

@@ -8,9 +8,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 const store = createStore(rootReducer, composeWithDevTools());
 
 function auth(store) {
-   if( store.getState() && store.getState().auth.isauth === true){
-        return true;
+   if(localStorage.getItem('isAuth') === 'xS1tnMgfDt'){
+       return true;
    }
+    // if( store.getState() && store.getState().auth.isauth === true){
+    //     return true;
+   // }
 }
 
 function App() {
