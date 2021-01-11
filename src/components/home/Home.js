@@ -49,9 +49,8 @@ export default class Home extends Component {
                             <div><p className="main-nav-bar">REPORTS</p>
                                 <ul className="nav flex-column">
                                     <li className="nav-item-menu"><a href="pac" role="button">Power and Cost</a></li>
-                                    <li className="nav-item-menu"><a href="station-rating-usage.html" role="button">Station
-                                        Rating</a></li>
-                                    <li className="nav-item-menu"><a href="billing.html" role="button">Billing &amp; History</a>
+                                    <li className="nav-item-menu"><a href="sr" role="button">Station Rating</a></li>
+                                    <li className="nav-item-menu"><a href="bh" role="button">Billing &amp; History</a>
                                     </li>
                                 </ul>
                             </div>
@@ -59,10 +58,10 @@ export default class Home extends Component {
                         <div className="col-auto">
                             <div><p className="main-nav-bar">MAIL</p>
                                 <ul className="nav flex-column">
-                                    <li className="nav-item-menu"><a href="messages-new.html" role="button">New Massage</a></li>
-                                    <li className="nav-item-menu"><a href="messages-incoming.html" role="button">Incoming
+                                    <li className="nav-item-menu"><a href="nm" role="button">New Massage</a></li>
+                                    <li className="nav-item-menu"><a href="im" role="button">Incoming
                                         Message</a></li>
-                                    <li className="nav-item-menu"><a href="messages-outgoing.html" role="button">Outgoing
+                                    <li className="nav-item-menu"><a href="om" role="button">Outgoing
                                         Message</a></li>
                                 </ul>
                             </div>
